@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.footballproject.RegisterGUI">
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.footballproject.RegisterGUI">
    <top>
       <FlowPane alignment="CENTER" prefHeight="70.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
@@ -90,7 +89,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="txtName" alignment="CENTER" prefHeight="20.0" prefWidth="300.0" GridPane.columnIndex="1">
+            <TextField fx:id="txtName" alignment="CENTER" prefHeight="30.0" prefWidth="300.0" GridPane.columnIndex="1">
                <font>
                   <Font size="14.0" />
                </font>
@@ -115,9 +114,9 @@
                   <Font size="14.0" />
                </font>
             </PasswordField>
-            <ChoiceBox fx:id="boxSex" prefHeight="20.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <ChoiceBox fx:id="boxNationality" prefHeight="20.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <ChoiceBox fx:id="boxClub" prefHeight="20.0" prefWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <ChoiceBox fx:id="boxSex" prefHeight="25.0" prefWidth="605.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <ChoiceBox fx:id="boxNationality" prefHeight="25.0" prefWidth="603.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ChoiceBox fx:id="boxClub" prefHeight="25.0" prefWidth="623.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>
    </center>

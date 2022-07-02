@@ -43,6 +43,7 @@ public class MainMenuGUI implements Initializable {
         myStage.setScene(scene);
         myStage.setTitle("Login");
         myStage.show();
+        myStage.setFullScreen(true);
     }
 
     @FXML
@@ -52,6 +53,7 @@ public class MainMenuGUI implements Initializable {
         myStage.setScene(scene);
         myStage.setTitle("Register");
         myStage.show();
+        myStage.setFullScreen(true);
     }
 
 

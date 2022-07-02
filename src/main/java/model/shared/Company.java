@@ -4,27 +4,28 @@ import model.store.club.ClubStore;
 import model.store.contract.ContractStore;
 import model.store.user.*;
 
-public abstract class Company {
+public class Company {
 
-    private static String designation;
+    private String designation;
     private static ClubStore clubStore;
     private static DirectorStore directorStore;
     private static ContractStore contractStore;
     private static UserStore userStore;
 
-    public Company() {
+    public Company(String designation) {
+        this.designation = designation;
         clubStore = new ClubStore();
         directorStore = new DirectorStore();
         contractStore = new ContractStore();
         userStore = new UserStore();
     }
 
-    public static String getDesignation() {
+    public String getDesignation() {
         return designation;
     }
 
-    public static void setDesignation(String designation) {
-        Company.designation = designation;
+    public void setDesignation(String designation) {
+        this.designation = designation;
     }
 
     public static ClubStore getClubStore() {

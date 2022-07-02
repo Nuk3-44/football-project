@@ -28,7 +28,7 @@ public abstract class Validator {
         return !emailExists(email) && !passwordExists(password);
     }
 
-    private static boolean emailExists(String email) {
+    public static boolean emailExists(String email) {
         for (User director : Company.getUserStore().getUserList()) {
             if (director instanceof Director) {
                 if (((Director) director).getEmail().equals(email)) {
@@ -40,7 +40,7 @@ public abstract class Validator {
         return false;
     }
 
-    private static boolean passwordExists(String password) {
+    public static boolean passwordExists(String password) {
         for (User director : Company.getUserStore().getUserList()) {
             if (director instanceof Director) {
                 if (((Director) director).getPassword().equals(password)) {

@@ -1,10 +1,7 @@
 package model.conceptual.user;
 
 import model.conceptual.contract.Contract;
-import model.enumerate.Country;
-import model.enumerate.Foot;
-import model.enumerate.Position;
-import model.enumerate.Sex;
+import model.enumerate.*;
 
 import java.util.Date;
 
@@ -14,10 +11,13 @@ public class Player extends User {
 
     private Foot foot;
 
+    private Condition condition;
+
     public Player(String name, Date birthDate, Sex sex, Country nationality, Position position, Foot foot) {
         super(name, birthDate, sex, nationality);
         this.position = position;
         this.foot = foot;
+        this.condition = Condition.READY;
     }
 
     public Position getPosition() {
@@ -28,11 +28,19 @@ public class Player extends User {
         return foot;
     }
 
+    public Condition getCondition() {
+        return condition;
+    }
+
     public void setPosition(Position position) {
         this.position = position;
     }
 
     public void setFoot(Foot foot) {
         this.foot = foot;
+    }
+
+    public void setCondition(Condition condition) {
+        this.condition = condition;
     }
 }

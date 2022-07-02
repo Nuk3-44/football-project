@@ -2,10 +2,7 @@ package model.conceptual.user;
 
 import model.conceptual.club.Club;
 import model.conceptual.contract.Contract;
-import model.enumerate.Country;
-import model.enumerate.Foot;
-import model.enumerate.Position;
-import model.enumerate.Sex;
+import model.enumerate.*;
 import model.shared.Company;
 import model.shared.Validator;
 
@@ -56,13 +53,14 @@ public class Director extends User {
             player.setId(Company.getUserStore().getUserList().size() + 1);
             player.setClub(this.getClub());
             this.getClub().getUserList().add(player);
+            this.getClub().setValue(this.getClub().getValue() + player.getContract().getValue());
             return true;
         }
         return false;
     }
 
-    public boolean registerStaff(String name, Date birthDate, Sex sex, Country nationality) {
-        User staff = new Staff(name, birthDate, sex, nationality);
+    public boolean registerStaff(String name, Date birthDate, Sex sex, Country nationality, StaffCategory category) {
+        User staff = new Staff(name, birthDate, sex, nationality, category);
         if (!Company.getUserStore().getUserList().contains(staff) && Validator.validateStaffNumber(this.getClub())) {
             Company.getUserStore().getUserList().add(staff);
             staff.setId(Company.getUserStore().getUserList().size() + 1);
@@ -73,17 +71,5 @@ public class Director extends User {
         return false;
     }
 
-    public boolean doLogin(String inEmail, String inPassword) {
-        return this.getEmail().equals(inEmail) && this.getPassword().equals(inPassword) && Company.getUserStore().getUserList().contains(this);
-    }
 
-    public boolean registerAccount(String name, Date birthDate, Sex sex, Country nationality, Club club, String email, String password) {
-        if (Validator.validateAccount(name, birthDate, sex, nationality, club, email, password)) {
-            User director = new Director(name, birthDate, sex, nationality, club, email, password);
-            Company.getUserStore().getUserList().add(director);
-            director.setId(Company.getUserStore().getUserList().size() + 1);
-            return true;
-        }
-        return false;
-    }
 }
