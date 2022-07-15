@@ -27,8 +27,8 @@ public class DirectorController {
         return director.createContract(user, endDate, salary, bonus, value);
     }
 
-    public boolean registerPlayer(String name, Date birthDate, Sex sex, Country nationality, Position position, Foot foot) {
-        return director.registerPlayer(name, birthDate, sex, nationality, position, foot);
+    public boolean registerPlayer(String name, Date birthDate, Sex sex, Country nationality, Position position, Foot foot, Club club) {
+        return director.registerPlayer(name, birthDate, sex, nationality, position, foot, club);
     }
 
     public boolean registerStaff(String name, Date birthDate, Sex sex, Country nationality, StaffCategory category) {

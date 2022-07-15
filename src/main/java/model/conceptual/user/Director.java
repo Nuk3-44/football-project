@@ -46,8 +46,8 @@ public class Director extends User {
         return false;
     }
 
-    public boolean registerPlayer(String name, Date birthDate, Sex sex, Country nationality, Position position, Foot foot) {
-        User player = new Player(name, birthDate, sex, nationality, position, foot);
+    public boolean registerPlayer(String name, Date birthDate, Sex sex, Country nationality, Position position, Foot foot, Club club) {
+        User player = new Player(name, birthDate, sex, nationality, position, foot, club);
         if (!Company.getUserStore().getUserList().contains(player) && Validator.validateSquadNumber(this.getClub())) {
             Company.getUserStore().getUserList().add(player);
             player.setId(Company.getUserStore().getUserList().size() + 1);

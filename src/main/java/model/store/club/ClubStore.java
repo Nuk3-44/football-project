@@ -21,4 +21,12 @@ public class ClubStore {
     public void setClubList(List<Club> clubList) {
         this.clubList = clubList;
     }
+
+    public List<String> getClubListName() {
+        List<String> nameList = new ArrayList<>();
+        for (Club club : clubList) {
+            nameList.add(club.getName());
+        }
+        return nameList;
+    }
 }

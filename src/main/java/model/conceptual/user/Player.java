@@ -1,5 +1,6 @@
 package model.conceptual.user;
 
+import model.conceptual.club.Club;
 import model.conceptual.contract.Contract;
 import model.enumerate.*;
 
@@ -13,8 +14,8 @@ public class Player extends User {
 
     private Condition condition;
 
-    public Player(String name, Date birthDate, Sex sex, Country nationality, Position position, Foot foot) {
-        super(name, birthDate, sex, nationality);
+    public Player(String name, Date birthDate, Sex sex, Country nationality, Position position, Foot foot, Club club) {
+        super(name, birthDate, sex, nationality, club);
         this.position = position;
         this.foot = foot;
         this.condition = Condition.READY;
